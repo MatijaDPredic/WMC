@@ -1,16 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fallout Fanpage</title>
+    <meta name="description" content="Fallout Fanpage">
+    <style>
+    body {
+        font-family: 'Courier New', monospace;
+        background-color: #0b0f00;
+        color: #00ff00;
+        margin: 0;
+        padding: 0;
+    }
+    header, footer {
+        background-color: #002200;
+        text-align: center;
+        padding: 1em;
+        border-bottom: 2px solid #00ff00;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin: 0 1em;
+    }
+    a {
+        color: #66ff66;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    section, article, aside {
+        padding: 2em;
+        border-bottom: 1px solid #004400;
+    }
+    h1, h2, h3 {
+        color: #00ff00;
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+        0% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+        100% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; }
+    }
+    blockquote {
+        border-left: 3px solid #00ff00;
+        margin-left: 0;
+        padding-left: 1em;
+        color: #99ff99;
+    }
+    pre {
+        background-color: #001100;
+        padding: 1em;
+        overflow-x: auto;
+        border: 1px solid #00ff00;
+        position: relative;
+    }
+    pre::after {
+        content: '|';
+        display: inline-block;
+        margin-left: 5px;
+        animation: blink 1s step-start infinite;
+        color: #00ff00;
+    }
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+    hr {
+        border: 1px dashed #00ff00;
+    }
+    small {
+        color: #66ff66;
+    }
+</style>
+
 </head>
 <body>
-    
+
+<header>
+    <h1>Fallout Fanpage</h1>
+    <nav>
+        <ul>
+            <li><a href="#spiele">Spiele</a></li>
+            <li><a href="#charaktere">Charaktere</a></li>
+            <li><a href="#zitate">Zitate</a></li>
+            <li><a href="#extras">Extras</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="spiele">
+        <h2>Fallout Spiele</h2>
+        <p>Die Fallout-Reihe ist eine <strong>Postapokalypse-Rollenspielserie</strong>, die in einer alternativen Zukunft spielt.</p>
+        <ol>
+            <li>Fallout (1997)</li>
+            <li>Fallout 2 (1998)</li>
+            <li>Fallout 3 (2008)</li>
+            <li>Fallout: New Vegas (2010)</li>
+            <li>Fallout 4 (2015)</li>
+        </ol>
+        <hr>
+    </section>
+
+    <section id="charaktere">
+        <h2>Beliebte Charaktere</h2>
+        <article>
+            <h3>The Vault Dweller</h3>
+            <p>Der Held des ersten Fallout-Spiels. Mutig, entschlossen und überlebensstark.</p>
+            <pre><code>HP: 100
+S.P.E.C.I.A.L.: Stärke 5, Wahrnehmung 5, Ausdauer 5, Charisma 5, Intelligenz 5, Geschick 5, Glück 5</code></pre>
+        </article>
+        <article>
+            <h3>Lone Wanderer</h3>
+            <p>Protagonist von Fallout 3, der die Ödlande erkundet.</p>
+            <pre><code>HP: 120
+S.P.E.C.I.A.L.: Stärke 6, Wahrnehmung 6, Ausdauer 6, Charisma 4, Intelligenz 6, Geschick 5, Glück 5</code></pre>
+        </article>
+        <hr>
+    </section>
+
+    <section id="zitate">
+        <h2>Berühmte Zitate</h2>
+        <blockquote>
+            <p>"War never changes."</p>
+            <cite>- Fallout Intro</cite>
+        </blockquote>
+        <blockquote>
+            <p>"War never changes, but people do."</p>
+            <cite>- Fallout 3</cite>
+        </blockquote>
+    </section>
+
+    <aside>
+        <h2>Fun Facts</h2>
+        <p>Das berühmte <em>Vault Boy</em>-Maskottchen wurde von Leonard Boyarsky entworfen.</p>
+        <p>Die Ödlande sind inspiriert von den USA der 1950er Jahre.</p>
+        <small>Quellen: Fallout Wiki, offizielle Entwicklerangaben</small>
+    </aside>
+
+    <section id="extras">
+        <h2>Extras</h2>
+        <p>Hier sind einige nützliche Links:</p>
+        <ul>
+            <li><a href="https://fallout.bethesda.net/">Offizielle Fallout Seite</a></li>
+            <li><a href="https://fallout.fandom.com/de/wiki/Fallout_Wiki">Fallout Wiki</a></li>
+        </ul>
+        <pre><code>Tipps:
+- Immer Munition sparen
+- Rad-Away nicht verschwenden
+- Begleiter richtig einsetzen</code></pre>
+    </section>
+</main>
+
+<footer>
+    <p>2025 Fallout Fanpage.</p>
+</footer>
+
 </body>
-
-
-
-
-
 </html>
