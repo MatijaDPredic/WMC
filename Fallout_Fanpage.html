@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Fallout Fanpage</title>
-    <meta name="a fallout fanpage" content="Fallout Fanpage">
-    <style>
+<meta charset="UTF-8">
+<title>Fallout Fanpage</title>
+<meta name="description" content="Fallout Fanpage">
+<style>
     body {
         font-family: 'Courier New', monospace;
         background-color: #0b0f00;
         color: #00ff00;
         margin: 0;
         padding: 0;
+    }
+    .pipboy {
+        width: 600px;
+        background-color: #001100;
+        border: 3px solid #00ff00;
+        padding: 20px;
+        box-shadow: 0 0 20px #00ff00;
+        margin: 20px auto;
+    }
+    .tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    .tab {
+        padding: 10px 20px;
+        border: 1px solid #00ff00;
+        cursor: pointer;
+        text-align: center;
+        flex: 1;
+        text-shadow: 0 0 3px #00ff00;
+    }
+    .tab.active {
+        background-color: #002200;
+        box-shadow: inset 0 0 10px #00ff00;
+    }
+    .content {
+        border: 1px solid #00ff00;
+        padding: 15px;
+        height: 250px;
+        overflow-y: auto;
     }
     header, footer {
         background-color: #002200;
@@ -59,7 +90,7 @@
         border: 1px solid #00ff00;
         position: relative;
     }
-    pre::after {
+    pre:not(.pip-pre)::after {
         content: '|';
         display: inline-block;
         margin-left: 5px;
@@ -154,11 +185,80 @@ S.P.E.C.I.A.L.: Stärke 6, Wahrnehmung 6, Ausdauer 6, Charisma 4, Intelligenz 6,
 - Rad-Away nicht verschwenden
 - Begleiter richtig einsetzen</code></pre>
     </section>
+
+    <!-- Pip-Boy -->
+    <div class="pipboy">
+        <h1>Pip-Boy 3000</h1>
+        <div class="tabs">
+            <div class="tab active" data-tab="stats">Stats</div>
+            <div class="tab" data-tab="inventory">Inventory</div>
+            <div class="tab" data-tab="map">Map</div>
+        </div>
+        <div class="content" id="tab-content">
+            <pre class="pip-pre">
+HP: 100/100
+AP: 50/50
+S.P.E.C.I.A.L.:
+Str: 5
+Per: 6
+End: 5
+Cha: 4
+Int: 6
+Agi: 5
+Lck: 5
+            </pre>
+        </div>
+    </div>
 </main>
 
 <footer>
     <p>2025 Fallout Fanpage.</p>
 </footer>
+
+<script>
+const tabs = document.querySelectorAll('.tab');
+const content = document.getElementById('tab-content');
+
+const tabData = {
+    stats: `
+HP: 100/100
+AP: 50/50
+S.P.E.C.I.A.L.:
+Str: 5
+Per: 6
+End: 5
+Cha: 4
+Int: 6
+Agi: 5
+Lck: 5
+    `,
+    inventory: `
+Inventory:
+- 10x Stimpak
+- 5x RadAway
+- 1x Laser Pistol
+- 1x 9mm Pistol
+- 50x 9mm Ammo
+    `,
+    map: `
+Map:
+[You are here]
+- Vault 101
+- Megaton
+- Rivet City
+- The Wasteland
+    `
+};
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const key = tab.dataset.tab;
+        content.innerHTML = `<pre class="pip-pre">${tabData[key]}</pre>`;
+    });
+});
+</script>
 
 </body>
 </html>
